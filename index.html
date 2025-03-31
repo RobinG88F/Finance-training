@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leerbehoefte Survey Finance</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 40px; }
-    label { display: block; margin-top: 10px; }
-    select, input, textarea { width: 100%; padding: 8px; margin-top: 5px; }
+    body { font-family: Arial, sans-serif; margin: 40px; background-color: #e3f2fd; color: #333; }
+    label { display: block; margin-top: 10px; font-weight: bold; }
+    select, input[type="text"], input[type="email"], textarea { width: 100%; padding: 8px; margin-top: 5px; }
+    .checkbox-group { margin-top: 10px; }
+    .checkbox-group label { font-weight: normal; display: block; margin-top: 5px; }
     .hidden { display: none; }
-    button { margin-top: 20px; padding: 10px 20px; font-size: 16px; }
+    button { margin-top: 20px; padding: 10px 20px; font-size: 16px; background-color: #1976d2; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background-color: #1565c0; }
   </style>
 </head>
 <body>
@@ -31,15 +34,15 @@
       <textarea name="uitdagingen" required></textarea>
 
       <label>Op welke gebieden zou je je graag verder ontwikkelen?</label>
-      <select name="ontwikkelgebieden" multiple>
-        <option>Financiële verslaglegging (IFRS, ESG)</option>
-        <option>Data-analyse / Power BI</option>
-        <option>Leiderschapsvaardigheden</option>
-        <option>Business partnering / communicatie</option>
-        <option>Strategie & governance</option>
-        <option>Projectmanagement</option>
-        <option>Soft skills (presenteren, beïnvloeden)</option>
-      </select>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="ontwikkelgebieden" value="Financiële verslaglegging (IFRS, ESG)"> Financiële verslaglegging (IFRS, ESG)</label>
+        <label><input type="checkbox" name="ontwikkelgebieden" value="Data-analyse / Power BI"> Data-analyse / Power BI</label>
+        <label><input type="checkbox" name="ontwikkelgebieden" value="Leiderschapsvaardigheden"> Leiderschapsvaardigheden</label>
+        <label><input type="checkbox" name="ontwikkelgebieden" value="Business partnering / communicatie"> Business partnering / communicatie</label>
+        <label><input type="checkbox" name="ontwikkelgebieden" value="Strategie & governance"> Strategie & governance</label>
+        <label><input type="checkbox" name="ontwikkelgebieden" value="Projectmanagement"> Projectmanagement</label>
+        <label><input type="checkbox" name="ontwikkelgebieden" value="Soft skills (presenteren, beïnvloeden)"> Soft skills (presenteren, beïnvloeden)</label>
+      </div>
 
       <label>Wat voor leervorm past het beste bij jou?</label>
       <select name="leervorm">
@@ -90,13 +93,13 @@
       `,
       'Group Financial Controller': `
         <label>Welke thema’s zijn voor jou het meest relevant?</label>
-        <select name="themas" multiple>
-          <option>Consolidatie</option>
-          <option>IFRS-updates</option>
-          <option>ESG Reporting</option>
-          <option>Interne beheersing</option>
-          <option>Auditvoorbereiding</option>
-        </select>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="themas" value="Consolidatie"> Consolidatie</label>
+          <label><input type="checkbox" name="themas" value="IFRS-updates"> IFRS-updates</label>
+          <label><input type="checkbox" name="themas" value="ESG Reporting"> ESG Reporting</label>
+          <label><input type="checkbox" name="themas" value="Interne beheersing"> Interne beheersing</label>
+          <label><input type="checkbox" name="themas" value="Auditvoorbereiding"> Auditvoorbereiding</label>
+        </div>
         <label>Hoe comfortabel voel je je met aankomende veranderingen in wet- en regelgeving (zoals ESG)?</label>
         <input type="range" name="regelgevingComfort" min="1" max="5">
       `,
